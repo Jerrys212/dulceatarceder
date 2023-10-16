@@ -9,9 +9,13 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+  ListItemButton,
+  MenuIcon,
+  CloseIcon,
+  PaidIcon,
+  InventoryIcon,
+  ChecklistIcon,
+} from "../exports/index";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -21,27 +25,31 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div">
-            My App
-          </Typography>
+    <>
+      <AppBar position="static" sx={{ backgroundColor: "#f4b1bb" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IconButton
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer}
+            >
+              <MenuIcon />
+            </IconButton>
+          </div>{" "}
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Typography variant="h6" component="div">
+              Dulce Atardecer
+            </Typography>
+          </div>
         </Toolbar>
       </AppBar>
 
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
         <div style={{ width: "250px" }}>
           <IconButton
-            edge="start"
+            edge="end"
             color="inherit"
             aria-label="menu"
             onClick={toggleDrawer}
@@ -49,26 +57,34 @@ const Header = () => {
             <CloseIcon />
           </IconButton>
           <List>
-            <ListItem>
-              <ListItemIcon>
-                {/* Agrega un ícono aquí si es necesario */}
-              </ListItemIcon>
-              <ListItemText primary="Opción 1" />
+            <ListItem key={"Ordenes"} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ChecklistIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Ordenes"} />
+              </ListItemButton>
             </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                {/* Agrega un ícono aquí si es necesario */}
-              </ListItemIcon>
-              <ListItemText primary="Opción 2" />
+            <ListItem key={"Ventas"} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <PaidIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Ventas"} />
+              </ListItemButton>
             </ListItem>
-            {/* Agregar más elementos ListItem según sea necesario */}
+            <ListItem key={"Productos"} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <InventoryIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Productos"} />
+              </ListItemButton>
+            </ListItem>
           </List>
         </div>
       </Drawer>
-
-      {/* Contenido de la página */}
-      <div>{/* Agregar contenido aquí */}</div>
-    </div>
+    </>
   );
 };
 
