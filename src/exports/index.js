@@ -19,6 +19,10 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 
 export {
   AppBar,
@@ -42,4 +46,8 @@ export {
   Box,
   TextField,
   Button,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
 };

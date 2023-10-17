@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import { Container } from "../exports/index";
 
 const Layout = () => {
   return (
     <>
       <Header />
-
-      <Outlet />
+      <Container sx={{ marginTop: "50px" }}>
+        <Outlet />
+      </Container>
     </>
   );
 };
