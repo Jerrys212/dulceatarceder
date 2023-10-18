@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {
   Grid,
@@ -8,9 +9,8 @@ import {
   Button,
   Box,
 } from "../exports/index";
-
-const Admin = () => {
-  const navigate = useNavigate();
+const Orden = () => {
+  const { id } = useParams();
 
   return (
     <>
@@ -23,7 +23,7 @@ const Admin = () => {
           marginBottom: "32px",
         }}
       >
-        Panel de Administración
+        Orden {id}
       </Typography>
 
       <Grid container spacing={2}>
@@ -127,4 +127,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Orden;
