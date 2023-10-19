@@ -16,6 +16,7 @@ import {
   InventoryIcon,
   ChecklistIcon,
 } from "../exports/index";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -23,6 +24,8 @@ const Header = () => {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -58,7 +61,7 @@ const Header = () => {
           </IconButton>
           <List>
             <ListItem key={"Ordenes"} disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={() => navigate("/admin/ordenes")}>
                 <ListItemIcon>
                   <ChecklistIcon />
                 </ListItemIcon>
@@ -66,7 +69,7 @@ const Header = () => {
               </ListItemButton>
             </ListItem>
             <ListItem key={"Ventas"} disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={() => navigate("/admin/ventas")}>
                 <ListItemIcon>
                   <PaidIcon />
                 </ListItemIcon>
@@ -74,7 +77,7 @@ const Header = () => {
               </ListItemButton>
             </ListItem>
             <ListItem key={"Productos"} disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={() => navigate("/admin/productos")}>
                 <ListItemIcon>
                   <InventoryIcon />
                 </ListItemIcon>

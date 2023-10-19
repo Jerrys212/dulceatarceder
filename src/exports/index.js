@@ -14,6 +14,7 @@ import ChecklistIcon from "@mui/icons-material/Checklist";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Backdrop from "@mui/material/Backdrop";
+import Select from "@mui/material/Select";
 import CircularProgress from "@mui/material/CircularProgress";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
@@ -21,6 +22,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Paper from "@mui/material/Paper";
@@ -31,6 +33,73 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
+import Divider from "@mui/material/Divider";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
+
+import FormControl from "@mui/material/FormControl";
+
+export const ventas = [
+  {
+    id: 123,
+    productos: [
+      {
+        id: 1,
+        nombre: "Waffle Platano",
+        precio: 50,
+        cantidad: 2,
+      },
+      {
+        id: 1,
+        nombre: "Waffle Durazno",
+        precio: 45,
+        cantidad: 2,
+      },
+    ],
+    total: 190,
+  },
+  {
+    id: 124,
+    productos: [
+      {
+        id: 1,
+        nombre: "Waffle Platano",
+        precio: 50,
+        cantidad: 2,
+      },
+      {
+        id: 1,
+        nombre: "Waffle Durazno",
+        precio: 45,
+        cantidad: 2,
+      },
+    ],
+    total: 190,
+  },
+  {
+    id: 125,
+    productos: [
+      {
+        id: 1,
+        nombre: "Waffle Platano",
+        precio: 50,
+        cantidad: 2,
+      },
+      {
+        id: 1,
+        nombre: "Waffle Durazno",
+        precio: 45,
+        cantidad: 2,
+      },
+    ],
+    total: 190,
+  },
+];
+
 export {
   AppBar,
   Toolbar,
@@ -55,6 +124,7 @@ export {
   Button,
   Grid,
   Card,
+  CardHeader,
   CardContent,
   CardMedia,
   Paper,
@@ -65,4 +135,13 @@ export {
   TableCell,
   TableContainer,
   TablePagination,
+  Divider,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Select,
+  ExpandMoreIcon,
+  MenuItem,
+  FormControl,
+  InputLabel,
 };

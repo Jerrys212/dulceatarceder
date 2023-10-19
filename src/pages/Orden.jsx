@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
 import {
   Grid,
   Card,
   CardContent,
   CardMedia,
   Typography,
-  Button,
-  Box,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
 } from "../exports/index";
+
 const Orden = () => {
   const { id } = useParams();
 
@@ -19,7 +22,7 @@ const Orden = () => {
         sx={{
           textAlign: "center",
           fontWeight: "700",
-          color: "white",
+
           marginBottom: "32px",
         }}
       >
@@ -29,97 +32,131 @@ const Orden = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardMedia component="img" height="300" image={"/ordenes.jpg"} />
+            <CardMedia
+              component="img"
+              alt="Imagen"
+              height="200"
+              image="waffles.jpg"
+            />
             <CardContent>
-              <Typography variant="h5" component="div">
-                Ordenes
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                Visualiza todas las ordenes pendientes o que ya fueron
-                entregadas.
-              </Typography>
-            </CardContent>
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#f4b1bb",
-                  marginBottom: " 20px",
-                  "&:hover": { backgroundColor: "#f4b1bb" },
-                }}
-                onClick={() => navigate("ordenes")}
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{ marginBottom: "20px" }}
               >
-                Ir
-              </Button>
-            </Box>
+                Waffle Platano
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                sx={{ marginBottom: "20px" }}
+              >
+                Queso Philadephia, Nutella y Platano.
+              </Typography>
+              <Divider />
+
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{ marginTop: "10px", marginBottom: "10px" }}
+              >
+                Toppings:
+              </Typography>
+              <List>
+                <ListItem>
+                  <ListItemText primary="Pretzels" />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Panditas" />
+                </ListItem>
+              </List>
+            </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardMedia component="img" height="300" image={"/ventas.jpg"} />
+            <CardMedia
+              component="img"
+              alt="Imagen"
+              height="200"
+              image="waffles.jpg"
+            />
             <CardContent>
-              <Typography variant="h5" component="div">
-                Ventas
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                Visualiza las ventas que has tenido durante el dia actual o
-                anteriores.
-              </Typography>
-            </CardContent>
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#f4b1bb",
-                  marginBottom: " 20px",
-                  "&:hover": { backgroundColor: "#f4b1bb" },
-                }}
-                onClick={() => navigate("ventas")}
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{ marginBottom: "20px" }}
               >
-                Ir
-              </Button>
-            </Box>
+                Waffle Platano
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                sx={{ marginBottom: "20px" }}
+              >
+                Queso Philadephia, Nutella y Platano.
+              </Typography>
+              <Divider />
+
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{ marginTop: "10px", marginBottom: "10px" }}
+              >
+                Toppings:
+              </Typography>
+              <List>
+                <ListItem>
+                  <ListItemText primary="Pretzels" />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Panditas" />
+                </ListItem>
+              </List>
+            </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardMedia component="img" height="300" image={"/productos.jpg"} />
+            <CardMedia
+              component="img"
+              alt="Imagen"
+              height="200"
+              image="waffles.jpg"
+            />
             <CardContent>
-              <Typography variant="h5" component="div">
-                Productos
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                Administra tus productos actuales, puedes agregar o quitar
-              </Typography>
-            </CardContent>
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#f4b1bb",
-                  marginBottom: " 20px",
-                  "&:hover": { backgroundColor: "#f4b1bb" },
-                }}
-                onClick={() => navigate("productos")}
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{ marginBottom: "20px" }}
               >
-                Ir
-              </Button>
-            </Box>
+                Waffle Platano
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                sx={{ marginBottom: "20px" }}
+              >
+                Queso Philadephia, Nutella y Platano.
+              </Typography>
+              <Divider />
+
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{ marginTop: "10px", marginBottom: "10px" }}
+              >
+                Toppings:
+              </Typography>
+              <List>
+                <ListItem>
+                  <ListItemText primary="Pretzels" />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Panditas" />
+                </ListItem>
+              </List>
+            </CardContent>
           </Card>
         </Grid>
       </Grid>

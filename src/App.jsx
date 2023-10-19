@@ -4,6 +4,8 @@ import Layout from "./components/Layout";
 import Admin from "./pages/Admin";
 import Ordenes from "./pages/Ordenes";
 import Orden from "./pages/Orden";
+import Ventas from "./pages/Ventas";
+import Productos from "./pages/Productos";
 
 const App = () => {
   return (
@@ -18,8 +20,8 @@ const App = () => {
           <Route index element={<Admin />} />
           <Route path="ordenes" element={<Ordenes />} />
           <Route path="orden/:id" element={<Orden />} />
-          <Route path="ventas" element={<Admin />} />
-          <Route path="productos" element={<Admin />} />
+          <Route path="ventas" element={<Ventas />} />
+          <Route path="productos" element={<Productos />} />
         </Route>
       </Routes>
     </HashRouter>

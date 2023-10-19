@@ -52,7 +52,6 @@ const Ordenes = () => {
         sx={{
           textAlign: "center",
           fontWeight: "700",
-          color: "white",
           marginBottom: "32px",
         }}
       >
