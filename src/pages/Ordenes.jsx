@@ -31,7 +31,7 @@ const Ordenes = () => {
     { id: 13, status: "Inactivo", date: "2023-10-13", name: "Ejemplo 13" },
     { id: 14, status: "Activo", date: "2023-10-14", name: "Ejemplo 14" },
     { id: 15, status: "Inactivo", date: "2023-10-15", name: "Ejemplo 15" },
-  ];
+  ].filter((element) => element.status !== "Inactivo");
 
   const handlechangepage = (event, newpage) => {
     pagechange(newpage);

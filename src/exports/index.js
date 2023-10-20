@@ -40,8 +40,12 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
+import Stack from "@mui/material/Stack";
+import EditNoteIcon from "@mui/icons-material/EditNote";
 import FormControl from "@mui/material/FormControl";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 export const ventas = [
   {
@@ -118,6 +122,7 @@ export {
   CloseIcon,
   Backdrop,
   CircularProgress,
+  EditNoteIcon,
   Container,
   Box,
   TextField,
@@ -144,4 +149,8 @@ export {
   MenuItem,
   FormControl,
   InputLabel,
+  Stack,
+  SendIcon,
+  DeleteIcon,
+  CheckCircleOutlineIcon,
 };
