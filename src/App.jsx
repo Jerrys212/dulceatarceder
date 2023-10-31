@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import Admin from "./pages/Admin";
@@ -9,22 +9,22 @@ import Productos from "./pages/Productos";
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route exact path="/" element={<Layout />}>
           <Route index element={<Login />} />
         </Route>
       </Routes>
       <Routes>
-        <Route path="/admin" element={<Layout />}>
+        <Route exact path="/admin" element={<Layout />}>
           <Route index element={<Admin />} />
-          <Route path="ordenes" element={<Ordenes />} />
-          <Route path="orden/:id" element={<Orden />} />
-          <Route path="ventas" element={<Ventas />} />
-          <Route path="productos" element={<Productos />} />
+          <Route exact path="ordenes" element={<Ordenes />} />
+          <Route exact path="orden/:id" element={<Orden />} />
+          <Route exact path="ventas" element={<Ventas />} />
+          <Route exact path="productos" element={<Productos />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
