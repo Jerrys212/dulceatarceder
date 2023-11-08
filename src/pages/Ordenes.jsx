@@ -58,6 +58,26 @@ const Ordenes = () => {
         Ordenes
       </Typography>
 
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: "20px",
+        }}
+      >
+        <Link to={`/admin/nuevaOrden`}>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#f4b1bb",
+              "&:hover": { backgroundColor: "#f4b1bb" },
+            }}
+          >
+            Nueva Orden
+          </Button>
+        </Link>
+      </Box>
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

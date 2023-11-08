@@ -46,7 +46,7 @@ import Stack from "@mui/material/Stack";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import FormControl from "@mui/material/FormControl";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-
+import AddIcon from "@mui/icons-material/Add";
 export const ventas = [
   {
     id: 123,
@@ -153,4 +153,5 @@ export {
   SendIcon,
   DeleteIcon,
   CheckCircleOutlineIcon,
+  AddIcon,
 };
