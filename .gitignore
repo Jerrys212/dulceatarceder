@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 dulceatardecer.war
+.env
 
 # Editor directories and files
 .vscode/*
