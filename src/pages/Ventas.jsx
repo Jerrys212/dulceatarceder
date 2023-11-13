@@ -50,7 +50,7 @@ const Ventas = () => {
         <Box sx={{ marginTop: "20px", paddingBottom: "40px" }}>
           {ventas.map((venta, i) => (
             <Accordion
-              key={venta.id}
+              key={i}
               defaultExpanded={i === 0}
               sx={{ marginTop: "10px" }}
             >
@@ -68,8 +68,8 @@ const Ventas = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {venta.productos.map((producto) => (
-                        <TableRow key={producto.id}>
+                      {venta.productos.map((producto, i) => (
+                        <TableRow key={i}>
                           <TableCell>{producto.nombre}</TableCell>
                           <TableCell>${producto.precio}</TableCell>
                           <TableCell>{producto.cantidad}</TableCell>

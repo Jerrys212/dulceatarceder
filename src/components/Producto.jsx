@@ -10,10 +10,10 @@ import {
   Typography,
 } from "../exports/index";
 
-const Producto = ({ nombre, descripcion, imagen }) => {
+const Producto = ({ nombre, descripcion, categoria }) => {
   return (
     <Card>
-      <CardMedia component="img" height="300" image={imagen} />
+      <CardMedia component="img" height="300" image={`/${categoria}.avif`} />
       <CardContent>
         <Typography variant="h5" component="div" sx={{ marginBottom: "10px" }}>
           {nombre}

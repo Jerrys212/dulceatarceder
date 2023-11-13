@@ -18,8 +18,7 @@ const App = () => {
       </Routes>
       <Routes>
         <Route exact path="/admin" element={<Layout />}>
-          <Route index element={<Admin />} />
-          <Route exact path="ordenes" element={<Ordenes />} />
+          <Route index element={<Ordenes />} />
           <Route exact path="nuevaOrden" element={<NuevaOrden />} />
           <Route exact path="orden/:id" element={<Orden />} />
           <Route exact path="ventas" element={<Ventas />} />

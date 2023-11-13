@@ -83,17 +83,18 @@ const Productos = () => {
           }}
         >
           <MenuItem value={10}>Waffles</MenuItem>
-          <MenuItem value={20}>Crepas</MenuItem>
+          <MenuItem value={20}>Crepas Saladas</MenuItem>
+          <MenuItem value={30}>Crepas Dulces</MenuItem>
         </Select>
       </FormControl>
 
       <Grid container spacing={2} sx={{ marginTop: "10px" }}>
-        {productos.map(({ nombre, descripcion, imagen }, i) => (
+        {productos.map(({ nombre, descripcion, categoria }, i) => (
           <Grid item xs={12} sm={6} md={4} key={i}>
             <Producto
               nombre={nombre}
               descripcion={descripcion}
-              imagen={imagen}
+              categoria={categoria}
             />
           </Grid>
         ))}
