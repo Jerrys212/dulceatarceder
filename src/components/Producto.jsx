@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Box,
   Button,
@@ -9,8 +10,18 @@ import {
   Stack,
   Typography,
 } from "../exports/index";
+import axiosDulce from "../helpers/dulceAxios";
 
-const Producto = ({ nombre, descripcion, categoria }) => {
+const Producto = ({ id, nombre, descripcion, categoria }) => {
+  const eliminarProducto = async (id) => {
+    try {
+      const { data } = await axiosDulce.delete(`/borrarProducto/${id}`);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Card>
       <CardMedia component="img" height="300" image={`/${categoria}.avif`} />
@@ -41,6 +52,7 @@ const Producto = ({ nombre, descripcion, categoria }) => {
             Modificar
           </Button>
           <Button
+            onClick={() => eliminarProducto(id)}
             variant="contained"
             endIcon={<DeleteIcon />}
             sx={{

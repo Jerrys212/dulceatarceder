@@ -47,6 +47,8 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import FormControl from "@mui/material/FormControl";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import AddIcon from "@mui/icons-material/Add";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+
 export const ventas = [
   {
     id: 123,
@@ -104,6 +106,28 @@ export const ventas = [
   },
 ];
 
+const inputSX = {
+  marginBottom: "12px",
+  color: "#f4b1bb",
+  "& label.Mui-focused": {
+    color: "#f4b1bb",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "#f4b1bb",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#f4b1bb",
+    },
+    "&:hover fieldset": {
+      borderColor: "#f4b1bb",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#f4b1bb",
+    },
+  },
+};
+
 export {
   AppBar,
   Toolbar,
@@ -154,4 +178,6 @@ export {
   DeleteIcon,
   CheckCircleOutlineIcon,
   AddIcon,
+  inputSX,
+  TextareaAutosize,
 };

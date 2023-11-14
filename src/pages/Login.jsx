@@ -4,6 +4,7 @@ import {
   Typography,
   TextField,
   Button,
+  inputSX,
 } from "../exports/index.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -12,28 +13,6 @@ import Spinner from "../components/Spinner";
 const Login = () => {
   const navigate = useNavigate();
   const [spinner, setSpinner] = useState(false);
-
-  const inputSX = {
-    marginBottom: "12px",
-    color: "#f4b1bb",
-    "& label.Mui-focused": {
-      color: "#f4b1bb",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "#f4b1bb",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "#f4b1bb",
-      },
-      "&:hover fieldset": {
-        borderColor: "#f4b1bb",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#f4b1bb",
-      },
-    },
-  };
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "80px" }}>
@@ -73,7 +52,7 @@ const Login = () => {
           variant="outlined"
           sx={inputSX}
         />
-        <div
+        <Box
           style={{
             display: "flex",
             justifyContent: "center",
@@ -95,7 +74,7 @@ const Login = () => {
           >
             Iniciar Sesión
           </Button>
-        </div>
+        </Box>
         <Spinner spinnerToggle={spinner} />
       </Box>
     </Container>
