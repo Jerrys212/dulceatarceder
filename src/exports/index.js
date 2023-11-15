@@ -48,6 +48,9 @@ import FormControl from "@mui/material/FormControl";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import AddIcon from "@mui/icons-material/Add";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 export const ventas = [
   {
@@ -179,5 +182,8 @@ export {
   CheckCircleOutlineIcon,
   AddIcon,
   inputSX,
+  MuiAlert,
+  Snackbar,
   TextareaAutosize,
+  Alert,
 };

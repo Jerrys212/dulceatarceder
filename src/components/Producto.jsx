@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Box,
   Button,
@@ -10,21 +9,21 @@ import {
   Stack,
   Typography,
 } from "../exports/index";
-import axiosDulce from "../helpers/dulceAxios";
+import { convertirCadena } from "../helpers/convertirCadena";
+
+import useProductos from "../hooks/useProductos";
 
 const Producto = ({ id, nombre, descripcion, categoria }) => {
-  const eliminarProducto = async (id) => {
-    try {
-      const { data } = await axiosDulce.delete(`/borrarProducto/${id}`);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { eliminarProducto } = useProductos();
 
   return (
     <Card>
-      <CardMedia component="img" height="300" image={`/${categoria}.avif`} />
+      <CardMedia
+        component="img"
+        height="300"
+        image={`/${categoria}.avif`}
+        alt={`${convertirCadena(categoria)} ${nombre}`}
+      />
       <CardContent>
         <Typography variant="h5" component="div" sx={{ marginBottom: "10px" }}>
           {nombre}

@@ -4,7 +4,7 @@ const axiosDulce = axios.create({
   baseURL: `${
     process.env.NODE_ENV === "production"
       ? import.meta.env.VITE_BACKEND
-      : "http://localhost:4000/dulce"
+      : import.meta.env.VITE_BACKEND_DEV
   }`,
 });
 

@@ -10,54 +10,45 @@ import {
   FormControl,
   InputLabel,
   Select,
+  Snackbar,
+  Alert,
 } from "../exports/index.js";
 import { convertirCadena } from "../helpers/convertirCadena.js";
-
-import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
 import axiosDulce from "../helpers/dulceAxios.js";
+import useProductos from "../hooks/useProductos.jsx";
+import { useEffect } from "react";
 
 const FormularioProductos = () => {
-  const [producto, setProducto] = useState({
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-  });
-  const [categorias, setCategorias] = useState([]);
-  const [spinner, setSpinner] = useState(false);
-
-  useEffect(() => {
-    const obtenerCategorias = async () => {
-      try {
-        const { data } = await axiosDulce("/obtenerCategorias");
-        setCategorias(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    obtenerCategorias();
-  }, []);
+  const {
+    snackbar,
+    setSnackbar,
+    handleCloseSnackbar,
+    categorias,
+    producto,
+    handleChangeproducto,
+    spinner,
+    setSpinner,
+  } = useProductos();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSpinner(true);
-
     try {
       const { data } = await axiosDulce.post("/agregarProducto", producto);
-      setSpinner(false);
+      setTimeout(() => {
+        setSnackbar({ flag: true, message: data.replyText });
+        setSpinner(false);
+      }, 1000);
     } catch (error) {
+      setSpinner(false);
       console.log(error);
     }
   };
 
-  const handleChangeproducto = (e) => {
-    setProducto({
-      ...producto,
-      [e.target.name]: e.target.value,
-    });
-  };
+  useEffect(() => {
+    console.log(spinner);
+  }, [spinner]);
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "80px" }}>
@@ -155,6 +146,21 @@ const FormularioProductos = () => {
         </Box>
 
         <Spinner spinnerToggle={spinner} />
+
+        <Snackbar
+          open={snackbar.flag}
+          autoHideDuration={6000}
+          onClose={handleCloseSnackbar}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        >
+          <Alert
+            onClose={handleCloseSnackbar}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
       </Box>
     </Container>
   );

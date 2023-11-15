@@ -61,7 +61,7 @@ const Header = () => {
           </IconButton>
           <List>
             <ListItem key={"Ordenes"} disablePadding>
-              <ListItemButton onClick={() => navigate("/admin/ordenes")}>
+              <ListItemButton onClick={() => navigate("/admin")}>
                 <ListItemIcon>
                   <ChecklistIcon />
                 </ListItemIcon>
