@@ -29,7 +29,7 @@ const Admin = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardMedia component="img" height="300" image={"/ordenes.jpg"} />
+            <CardMedia component="img" height="300" image={"/ordenes.avif"} />
             <CardContent>
               <Typography variant="h5" component="div">
                 Ordenes
@@ -61,7 +61,7 @@ const Admin = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardMedia component="img" height="300" image={"/ventas.jpg"} />
+            <CardMedia component="img" height="300" image={"/ventas.avif"} />
             <CardContent>
               <Typography variant="h5" component="div">
                 Ventas
@@ -93,7 +93,7 @@ const Admin = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardMedia component="img" height="300" image={"/productos.jpg"} />
+            <CardMedia component="img" height="300" image={"/productos.avif"} />
             <CardContent>
               <Typography variant="h5" component="div">
                 Productos

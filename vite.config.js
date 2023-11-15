@@ -11,12 +11,4 @@ export default defineConfig({
   build: {
     outDir: "dulceatardecer",
   },
-  rollupOptions: {
-    external: ["react", "react-router", "react-router-dom"],
-    output: {
-      globals: {
-        react: "React",
-      },
-    },
-  },
 });

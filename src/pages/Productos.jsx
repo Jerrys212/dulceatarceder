@@ -15,27 +15,18 @@ import Spinner from "../components/Spinner";
 import axiosDulce from "../helpers/dulceAxios";
 import Producto from "../components/Producto";
 import { Link } from "react-router-dom";
+import useProductos from "../hooks/useProductos";
+import { convertirCadena } from "../helpers/convertirCadena";
 
 const Productos = () => {
-  const [age, setAge] = useState("");
-  const [productos, setProductos] = useState([]);
-
-  const [backdrop, setBackdrop] = useState(false);
-
-  useEffect(() => {
-    const obtenerProductos = async () => {
-      try {
-        const { data } = await axiosDulce("/obtenerProductos");
-        setProductos(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    obtenerProductos();
-  }, []);
-
-  console.log(productos);
+  const {
+    categorias,
+    spinner,
+    productos,
+    setSpinner,
+    producto,
+    handleChangeproducto,
+  } = useProductos();
 
   return (
     <>
@@ -68,23 +59,20 @@ const Productos = () => {
         elevation={10}
       >
         <FormControl fullWidth sx={inputSX}>
-          <InputLabel id="demo-simple-select-label">Producto</InputLabel>
+          <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={age}
-            label="Producto"
-            onChange={(e) => {
-              setAge(e.target.value);
-              setBackdrop(true);
-              setTimeout(() => {
-                setBackdrop(false);
-              }, 1500);
-            }}
+            value={producto.categoria}
+            label="Categoria"
+            name="categoria"
+            onChange={handleChangeproducto}
           >
-            <MenuItem value={10}>Waffles</MenuItem>
-            <MenuItem value={20}>Crepas Saladas</MenuItem>
-            <MenuItem value={30}>Crepas Dulces</MenuItem>
+            {categorias.map(({ categoria }, i) => (
+              <MenuItem value={categoria} key={i}>
+                {convertirCadena(categoria)}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
 
@@ -100,7 +88,7 @@ const Productos = () => {
             </Grid>
           ))}
         </Grid>
-        <Spinner spinnerToggle={backdrop} />
+        <Spinner spinnerToggle={spinner} />
       </Box>
     </>
   );

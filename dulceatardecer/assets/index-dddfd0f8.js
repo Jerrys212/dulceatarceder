@@ -24425,7 +24425,7 @@ const w5 = [
                   d.jsx(En, {
                     component: "img",
                     height: "300",
-                    image: "/ordenes.jpg",
+                    image: "/ordenes.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -24468,7 +24468,7 @@ const w5 = [
                   d.jsx(En, {
                     component: "img",
                     height: "300",
-                    image: "/ventas.jpg",
+                    image: "/ventas.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -24511,7 +24511,7 @@ const w5 = [
                   d.jsx(En, {
                     component: "img",
                     height: "300",
-                    image: "/productos.jpg",
+                    image: "/productos.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -24617,48 +24617,46 @@ const w5 = [
                 d.jsx(O0, {
                   children:
                     e &&
-                    e
-                      .slice(r * i, r * i + i)
-                      .map((l, a) =>
-                        d.jsxs(
-                          $l,
-                          {
-                            children: [
-                              d.jsx(Ue, {
-                                style: { textAlign: "center" },
-                                children: l.id,
-                              }),
-                              d.jsx(Ue, {
-                                style: { textAlign: "center" },
-                                children: l.name,
-                              }),
-                              d.jsx(Ue, {
-                                style: { textAlign: "center" },
-                                children: l.status,
-                              }),
-                              d.jsx(Ue, {
-                                style: { textAlign: "center" },
-                                children: l.date,
-                              }),
-                              d.jsx(Ue, {
-                                style: { textAlign: "center" },
-                                children: d.jsx(mb, {
-                                  to: `/admin/orden/${l.id}`,
-                                  children: d.jsx(bt, {
-                                    variant: "contained",
-                                    sx: {
-                                      backgroundColor: "#f4b1bb",
-                                      "&:hover": { backgroundColor: "#f4b1bb" },
-                                    },
-                                    children: "Ver Orden",
-                                  }),
+                    e.slice(r * i, r * i + i).map((l, a) =>
+                      d.jsxs(
+                        $l,
+                        {
+                          children: [
+                            d.jsx(Ue, {
+                              style: { textAlign: "center" },
+                              children: l.id,
+                            }),
+                            d.jsx(Ue, {
+                              style: { textAlign: "center" },
+                              children: l.name,
+                            }),
+                            d.jsx(Ue, {
+                              style: { textAlign: "center" },
+                              children: l.status,
+                            }),
+                            d.jsx(Ue, {
+                              style: { textAlign: "center" },
+                              children: l.date,
+                            }),
+                            d.jsx(Ue, {
+                              style: { textAlign: "center" },
+                              children: d.jsx(mb, {
+                                to: `/admin/orden/${l.id}`,
+                                children: d.jsx(bt, {
+                                  variant: "contained",
+                                  sx: {
+                                    backgroundColor: "#f4b1bb",
+                                    "&:hover": { backgroundColor: "#f4b1bb" },
+                                  },
+                                  children: "Ver Orden",
                                 }),
                               }),
-                            ],
-                          },
-                          a
-                        )
-                      ),
+                            }),
+                          ],
+                        },
+                        a
+                      )
+                    ),
                 }),
               ],
             }),
@@ -24731,7 +24729,7 @@ const w5 = [
                     component: "img",
                     alt: "Imagen",
                     height: "200",
-                    image: "/waffles.jpg",
+                    image: "/waffles.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -24780,7 +24778,7 @@ const w5 = [
                     component: "img",
                     alt: "Imagen",
                     height: "200",
-                    image: "/waffles.jpg",
+                    image: "/waffles.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -24829,7 +24827,7 @@ const w5 = [
                     component: "img",
                     alt: "Imagen",
                     height: "200",
-                    image: "/waffles.jpg",
+                    image: "/waffles.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -25029,7 +25027,7 @@ const w5 = [
                   d.jsx(En, {
                     component: "img",
                     height: "300",
-                    image: "/crepas.jpg",
+                    image: "/crepas.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -25090,7 +25088,7 @@ const w5 = [
                   d.jsx(En, {
                     component: "img",
                     height: "300",
-                    image: "/waffles.jpg",
+                    image: "/waffles.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [
@@ -25151,7 +25149,7 @@ const w5 = [
                   d.jsx(En, {
                     component: "img",
                     height: "300",
-                    image: "/crepas.jpg",
+                    image: "/crepas.avif",
                   }),
                   d.jsxs(Rn, {
                     children: [

@@ -20,7 +20,7 @@ const NuevaOrden = () => {
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <Card>
-              <CardMedia component="img" height="150" image={"/crepas.jpg"} />
+              <CardMedia component="img" height="150" image={"/crepas.avif"} />
               <CardContent>
                 <Typography
                   variant="h5"
@@ -57,7 +57,7 @@ const NuevaOrden = () => {
           </Grid>
           <Grid item xs={6}>
             <Card>
-              <CardMedia component="img" height="150" image={"/crepas.jpg"} />
+              <CardMedia component="img" height="150" image={"/crepas.avif"} />
               <CardContent>
                 <Typography
                   variant="h5"

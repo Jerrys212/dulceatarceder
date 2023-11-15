@@ -17,7 +17,6 @@ import { convertirCadena } from "../helpers/convertirCadena.js";
 import Spinner from "../components/Spinner";
 import axiosDulce from "../helpers/dulceAxios.js";
 import useProductos from "../hooks/useProductos.jsx";
-import { useEffect } from "react";
 
 const FormularioProductos = () => {
   const {
@@ -45,10 +44,6 @@ const FormularioProductos = () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    console.log(spinner);
-  }, [spinner]);
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "80px" }}>

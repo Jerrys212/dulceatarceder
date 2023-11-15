@@ -72,7 +72,7 @@ const Orden = () => {
               component="img"
               alt="Imagen"
               height="200"
-              image="/waffles.jpg"
+              image="/waffles.avif"
             />
             <CardContent>
               <Typography
@@ -115,7 +115,7 @@ const Orden = () => {
               component="img"
               alt="Imagen"
               height="200"
-              image="/waffles.jpg"
+              image="/waffles.avif"
             />
             <CardContent>
               <Typography
@@ -158,7 +158,7 @@ const Orden = () => {
               component="img"
               alt="Imagen"
               height="200"
-              image="/waffles.jpg"
+              image="/waffles.avif"
             />
             <CardContent>
               <Typography
