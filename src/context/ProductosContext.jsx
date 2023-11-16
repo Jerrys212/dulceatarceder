@@ -5,6 +5,7 @@ const ProductosContext = createContext();
 
 const ProductosProvider = ({ children }) => {
   const [categorias, setCategorias] = useState([]);
+  const [categoria, setCategoria] = useState("");
   const [spinner, setSpinner] = useState(false);
   const [productos, setProductos] = useState([]);
   const [snackbar, setSnackbar] = useState({ flag: false, message: "" });
@@ -69,6 +70,8 @@ const ProductosProvider = ({ children }) => {
     <ProductosContext.Provider
       value={{
         categorias,
+        categoria,
+        setCategoria,
         producto,
         productos,
         handleChangeproducto,

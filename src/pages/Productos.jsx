@@ -21,12 +21,20 @@ import { convertirCadena } from "../helpers/convertirCadena";
 const Productos = () => {
   const {
     categorias,
+    categoria,
+    setCategoria,
     spinner,
     productos,
     setSpinner,
     producto,
     handleChangeproducto,
   } = useProductos();
+
+  const getFilteredProducts = () => {
+    return categoria !== ""
+      ? productos.filter((producto) => producto.categoria === categoria)
+      : productos;
+  };
 
   return (
     <>
@@ -63,10 +71,10 @@ const Productos = () => {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={producto.categoria}
+            value={categoria}
             label="Categoria"
             name="categoria"
-            onChange={handleChangeproducto}
+            onChange={(e) => setCategoria(e.target.value)}
           >
             {categorias.map(({ categoria }, i) => (
               <MenuItem value={categoria} key={i}>
@@ -77,16 +85,18 @@ const Productos = () => {
         </FormControl>
 
         <Grid container spacing={2} sx={{ marginTop: "10px" }}>
-          {productos.map(({ _id, nombre, descripcion, categoria }, i) => (
-            <Grid item xs={12} sm={6} md={4} key={i}>
-              <Producto
-                nombre={nombre}
-                descripcion={descripcion}
-                categoria={categoria}
-                id={_id}
-              />
-            </Grid>
-          ))}
+          {getFilteredProducts().map(
+            ({ _id, nombre, descripcion, categoria }, i) => (
+              <Grid item xs={12} sm={6} md={4} key={i}>
+                <Producto
+                  nombre={nombre}
+                  descripcion={descripcion}
+                  categoria={categoria}
+                  id={_id}
+                />
+              </Grid>
+            )
+          )}
         </Grid>
         <Spinner spinnerToggle={spinner} />
       </Box>
