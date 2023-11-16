@@ -47,6 +47,11 @@ const ProductosProvider = ({ children }) => {
   const eliminarProducto = async (id) => {
     try {
       const { data } = await axiosDulce.delete(`/borrarProducto/${id}`);
+
+      const productosActualizados = productos.filter(
+        (productostate) => productostate._id !== id
+      );
+      setProductos(productosActualizados);
       console.log(data);
     } catch (error) {
       console.log(error);

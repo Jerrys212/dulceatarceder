@@ -51,6 +51,8 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 export const ventas = [
   {
@@ -186,4 +188,6 @@ export {
   Snackbar,
   TextareaAutosize,
   Alert,
+  Tab,
+  Tabs,
 };
