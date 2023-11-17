@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axiosDulce from "../helpers/dulceAxios";
+import config from "../helpers/config";
 
 const ProductosContext = createContext();
 
@@ -34,7 +35,7 @@ const ProductosProvider = ({ children }) => {
   useEffect(() => {
     const obtenerCategorias = async () => {
       try {
-        const { data } = await axiosDulce("/obtenerCategorias");
+        const { data } = await axiosDulce("/obtenerCategorias", config);
         setCategorias(data);
       } catch (error) {
         console.log(error);
@@ -42,11 +43,22 @@ const ProductosProvider = ({ children }) => {
     };
 
     obtenerCategorias();
+
+    const obtenerProductos = async () => {
+      try {
+        const { data } = await axiosDulce("/obtenerProductos", config);
+        setProductos(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    obtenerProductos();
   }, []);
 
   const eliminarProducto = async (id) => {
     try {
-      const { data } = await axiosDulce.delete(`/borrarProducto/${id}`);
+      const { data } = await axiosDulce.delete(`/borrarProducto/${id}`, config);
 
       const productosActualizados = productos.filter(
         (productostate) => productostate._id !== id
@@ -57,20 +69,6 @@ const ProductosProvider = ({ children }) => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    const obtenerProductos = async () => {
-      try {
-        const { data } = await axiosDulce("/obtenerProductos");
-        setProductos(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    obtenerProductos();
-  }, []);
-
   return (
     <ProductosContext.Provider
       value={{

@@ -8,31 +8,36 @@ import Productos from "./pages/Productos";
 import NuevaOrden from "./pages/NuevaOrden";
 import FormularioProductos from "./pages/FormularioProductos";
 import { ProductosProvider } from "./context/ProductosContext";
+import LayoutPrivate from "./components/LayoutPrivate";
+import { AuthProvider } from "./context/AuthContext";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Layout />}>
-          <Route index element={<Login />} />
-        </Route>
-      </Routes>
-      <ProductosProvider>
+      <AuthProvider>
         <Routes>
-          <Route exact path="/admin" element={<Layout />}>
-            <Route index element={<Ordenes />} />
-            <Route exact path="nuevaOrden" element={<NuevaOrden />} />
-            <Route exact path="orden/:id" element={<Orden />} />
-            <Route exact path="ventas" element={<Ventas />} />
-            <Route exact path="productos" element={<Productos />} />
-            <Route
-              exact
-              path="formulario-productos"
-              element={<FormularioProductos />}
-            />
+          <Route exact path="/" element={<Layout />}>
+            <Route index element={<Login />} />
           </Route>
         </Routes>
-      </ProductosProvider>
+
+        <ProductosProvider>
+          <Routes>
+            <Route exact path="/admin" element={<LayoutPrivate />}>
+              <Route index element={<Ordenes />} />
+              <Route exact path="nuevaOrden" element={<NuevaOrden />} />
+              <Route exact path="orden/:id" element={<Orden />} />
+              <Route exact path="ventas" element={<Ventas />} />
+              <Route exact path="productos" element={<Productos />} />
+              <Route
+                exact
+                path="formulario-productos"
+                element={<FormularioProductos />}
+              />
+            </Route>
+          </Routes>
+        </ProductosProvider>
+      </AuthProvider>
     </BrowserRouter>
   );
 };

@@ -9,10 +9,37 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Spinner from "../components/Spinner";
+import useAuth from "../hooks/useAuth";
+import axiosDulce from "../helpers/dulceAxios.js";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [spinner, setSpinner] = useState(false);
+
+  const { setAuth, cargando, setCargando } = useAuth();
+  const [usuario, setUsuario] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setCargando(true);
+
+    try {
+      const { data } = await axiosDulce.post("/autenticar", {
+        usuario,
+        password,
+      });
+
+      localStorage.setItem("token", data.token);
+      setAuth(data);
+      setTimeout(() => {
+        setCargando(false);
+        navigate("/admin");
+      }, 1500);
+    } catch (error) {
+      setCargando(false);
+      console.log(error);
+    }
+  };
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "80px" }}>
@@ -25,6 +52,7 @@ const Login = () => {
           padding: "50px", // Espacio interior para el Box
         }}
         noValidate
+        onSubmit={handleSubmit}
         autoComplete="off"
       >
         <Typography
@@ -42,6 +70,8 @@ const Login = () => {
           label="Usuario"
           variant="outlined"
           fullWidth
+          value={usuario}
+          onChange={(e) => setUsuario(e.target.value)}
           sx={inputSX}
         />
         <TextField
@@ -50,6 +80,8 @@ const Login = () => {
           type="password"
           fullWidth
           variant="outlined"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           sx={inputSX}
         />
         <Box
@@ -59,13 +91,7 @@ const Login = () => {
           }}
         >
           <Button
-            onClick={() => {
-              setSpinner(true);
-              setTimeout(() => {
-                setSpinner(false);
-                navigate("/admin");
-              }, 2000);
-            }}
+            type="submit"
             variant="contained"
             sx={{
               backgroundColor: "#f4b1bb",
@@ -75,7 +101,7 @@ const Login = () => {
             Iniciar Sesión
           </Button>
         </Box>
-        <Spinner spinnerToggle={spinner} />
+        <Spinner spinnerToggle={cargando} />
       </Box>
     </Container>
   );
