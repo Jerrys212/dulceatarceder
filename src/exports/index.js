@@ -53,6 +53,9 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Collapse from "@mui/material/Collapse";
 
 export const ventas = [
   {
@@ -190,4 +193,7 @@ export {
   Alert,
   Tab,
   Tabs,
+  ExpandMore,
+  ExpandLess,
+  Collapse,
 };

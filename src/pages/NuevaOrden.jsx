@@ -30,7 +30,6 @@ const NuevaOrden = () => {
         flexGrow: 1,
         bgcolor: "background.paper",
         display: "flex",
-        height: "80vh",
       }}
     >
       <Tabs

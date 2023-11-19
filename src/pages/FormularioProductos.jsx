@@ -17,6 +17,7 @@ import { convertirCadena } from "../helpers/convertirCadena.js";
 import Spinner from "../components/Spinner";
 import axiosDulce from "../helpers/dulceAxios.js";
 import useProductos from "../hooks/useProductos.jsx";
+import Snack from "../components/Snack.jsx";
 
 const FormularioProductos = () => {
   const {
@@ -141,21 +142,7 @@ const FormularioProductos = () => {
         </Box>
 
         <Spinner spinnerToggle={spinner} />
-
-        <Snackbar
-          open={snackbar.flag}
-          autoHideDuration={6000}
-          onClose={handleCloseSnackbar}
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        >
-          <Alert
-            onClose={handleCloseSnackbar}
-            severity="success"
-            sx={{ width: "100%" }}
-          >
-            {snackbar.message}
-          </Alert>
-        </Snackbar>
+        <Snack snackbar={snackbar} handleCloseSnackbar={handleCloseSnackbar} />
       </Box>
     </Container>
   );

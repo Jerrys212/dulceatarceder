@@ -11,13 +11,28 @@ import { useState } from "react";
 import Spinner from "../components/Spinner";
 import useAuth from "../hooks/useAuth";
 import axiosDulce from "../helpers/dulceAxios.js";
+import Snack from "../components/Snack.jsx";
 
 const Login = () => {
   const navigate = useNavigate();
 
   const { setAuth, cargando, setCargando } = useAuth();
+  const [snackbar, setSnackbar] = useState({
+    flag: false,
+    message: "",
+    tipo: "success",
+  });
+
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleCloseSnackbar = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setSnackbar({ flag: false, message: "", tipo: "success" });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,6 +52,11 @@ const Login = () => {
       }, 1500);
     } catch (error) {
       setCargando(false);
+      setSnackbar({
+        flag: true,
+        message: error.response.data.replyText,
+        tipo: "error",
+      });
       console.log(error);
     }
   };
@@ -102,6 +122,7 @@ const Login = () => {
           </Button>
         </Box>
         <Spinner spinnerToggle={cargando} />
+        <Snack snackbar={snackbar} handleCloseSnackbar={handleCloseSnackbar} />
       </Box>
     </Container>
   );

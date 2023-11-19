@@ -33,6 +33,9 @@ const ProductosProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
     const obtenerCategorias = async () => {
       try {
         const { data } = await axiosDulce("/obtenerCategorias", config);
