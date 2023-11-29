@@ -45,8 +45,8 @@ const NuevaOrden = () => {
       </Tabs>
       <TabPanel value={value} index={0}>
         <Typography
-          variant="h5"
-          component="div"
+          variant="h4"
+          component="h5"
           sx={{ marginBottom: "20px", textAlign: "center" }}
         >
           Productos
@@ -54,23 +54,23 @@ const NuevaOrden = () => {
 
         <Grid container spacing={2}>
           {productos.map((producto) => (
-            <Grid item xs={6} md={4}>
+            <Grid item xs={6} md={4} key={producto._id}>
               <Card>
                 <CardMedia
                   component="img"
                   height="150"
-                  image={"/crepas.avif"}
+                  image={`/${producto.categoria}.avif`}
                 />
                 <CardContent>
                   <Typography
-                    variant="h5"
-                    component="div"
+                    variant="h4"
+                    component="p"
                     sx={{ marginBottom: "10px" }}
                   >
-                    Waffle Platano
+                    {producto.nombre}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    Queso Philadephia, Nutella y Platano.
+                  <Typography variant="p" component="p" color="textSecondary">
+                    {producto.descripcion}
                   </Typography>
                 </CardContent>
                 <Box

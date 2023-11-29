@@ -6,15 +6,8 @@ import {
   Typography,
   Drawer,
   List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  ListItemButton,
   MenuIcon,
   CloseIcon,
-  PaidIcon,
-  InventoryIcon,
-  ChecklistIcon,
 } from "../exports/index";
 import { useNavigate } from "react-router-dom";
 import CustomList from "./CustomList";
@@ -69,7 +62,7 @@ const Header = () => {
           <List>
             <CustomList
               primary="Ordenes"
-              subItems={["Opción 1", "Opción 2", "Opción 3"]}
+              subItems={["NuevaOrden"]}
               open={openAccordion === "Ordenes"}
               onAccordionClick={() => handleAccordionClick("Ordenes")}
             />
